@@ -1,0 +1,58 @@
+{
+  "project": {
+    "name": "AQS Advocacia — Rescisão Indireta",
+    "displayName": "AQS Advocacia",
+    "conversionAction": "Formulário de triagem",
+    "slug": "aqs-advocacia-rescisao-indireta",
+    "sourceTemplate": "Template 1",
+    "sourceVersion": "1.2.0"
+  },
+  "professional": {
+    "name": "Ana Quint e Roselei Machado",
+    "officeName": "AQS Advocacia",
+    "oab": "OAB/SC 51.785 · OAB/SC 79.520",
+    "area": "Direito do Trabalho — Rescisão indireta",
+    "city": "São José/SC",
+    "biography": "Atuação nas áreas Trabalhista, Previdenciária e Tributária, com triagem dedicada à possível rescisão indireta."
+  },
+  "contact": {
+    "whatsapp": "",
+    "whatsappMessage": "Olá! Vim pela página sobre rescisão indireta da AQS Advocacia.",
+    "email": "",
+    "linkedin": ""
+  },
+  "location": {
+    "city": "São José/SC",
+    "regions": "São José, Santa Catarina, e possibilidade de atendimento digital",
+    "address": "",
+    "hours": "Mediante agendamento",
+    "mapsQuery": "São José, Santa Catarina"
+  },
+  "theme": {
+    "primary": "#b99355",
+    "secondary": "#0d2529",
+    "style": "Institucional editorial"
+  },
+  "hero": {
+    "title": "A empresa deixou de cumprir obrigações importantes do contrato de trabalho?",
+    "description": "Antes de pedir demissão ou deixar de comparecer, informe o que está acontecendo para uma triagem inicial.",
+    "cta": "Contar o que aconteceu"
+  },
+  "audience": "Trabalhadores que relatam possível falta grave do empregador",
+  "services": [
+    {
+      "title": "Triagem sobre rescisão indireta",
+      "description": "Análise inicial de fatos, datas, documentos e situação atual do contrato de trabalho."
+    }
+  ],
+  "assets": "Imagens fornecidas pela equipe para esta landing page",
+  "approval": {
+    "responsible": "AQS Advocacia",
+    "approved": false
+  },
+  "pending": [
+    "Informar domínio oficial para canonical, sitemap e indexação",
+    "Configurar VITE_FORM_ENDPOINT para o recebimento seguro do formulário",
+    "Revisar e aprovar a política de privacidade definitiva"
+  ]
+}

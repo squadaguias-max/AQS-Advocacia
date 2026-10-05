@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Remover o bloqueio e informar o sitemap após a definição do domínio oficial.

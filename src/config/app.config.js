@@ -1,0 +1,2 @@
+import { defaultBrand } from "./brand.config";
+export const appConfig={name:"AQS Advocacia",description:"Triagem jurídica informativa sobre possível rescisão indireta.",brand:defaultBrand,features:{catalog:false,account:false,admin:false},navigation:[{label:"Início",to:"#inicio"},{label:"Situações avaliadas",to:"#situacoes"},{label:"Orientações",to:"#orientacoes"},{label:"Perguntas frequentes",to:"#faq"}]};

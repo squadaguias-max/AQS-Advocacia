@@ -1,0 +1,1 @@
+export const defaultBrand={logoText:"A&V",colors:{primary:"#b28a4b",primaryStrong:"#8b6834",accent:"#d8bd88",surface:"#ffffff",background:"#f7f5f0",text:"#102236",muted:"#65717e"},fonts:{display:"Georgia, 'Times New Roman', serif",body:"Inter, Arial, sans-serif"},radius:"4px"};
