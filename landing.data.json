@@ -18,13 +18,16 @@
   "contact": {
     "whatsapp": "",
     "whatsappMessage": "Olá! Vim pela página sobre rescisão indireta da AQS Advocacia.",
-    "email": "",
-    "linkedin": ""
+    "phone": "(48) 98825-0054",
+    "email": "contato@aqsadvocacia.com",
+    "instagram": "@aqsadvocacia",
+    "instagramUrl": "https://www.instagram.com/aqsadvocacia/",
+    "website": "https://aqsadvocacia.com"
   },
   "location": {
     "city": "São José/SC",
     "regions": "São José, Santa Catarina, e possibilidade de atendimento digital",
-    "address": "",
+    "address": "Av. Mal. Castelo Branco, 65, Bl. B, Sala 1203, Campinas, São José/SC, 88101-020",
     "hours": "Mediante agendamento",
     "mapsQuery": "São José, Santa Catarina"
   },
@@ -51,7 +54,6 @@
     "approved": false
   },
   "pending": [
-    "Informar domínio oficial para canonical, sitemap e indexação",
     "Configurar VITE_FORM_ENDPOINT para o recebimento seguro do formulário",
     "Revisar e aprovar a política de privacidade definitiva"
   ]

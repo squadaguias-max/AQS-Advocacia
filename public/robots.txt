@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /
 
-# Remover o bloqueio e informar o sitemap após a definição do domínio oficial.
+# Manter o bloqueio até a aprovação da política de privacidade e do canal de recebimento.
+Sitemap: https://aqsadvocacia.com/sitemap.xml

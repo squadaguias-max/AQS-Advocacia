@@ -21,12 +21,11 @@
 
 ## Pendências para publicação
 
-1. Informar o domínio oficial. Depois, adicionar canonical absoluta, `og:url`, `sitemap.xml` e liberar o `robots.txt`.
-2. Configurar `VITE_FORM_ENDPOINT` com o canal seguro que receberá a triagem.
-3. Revisar e aprovar a Política de Privacidade definitiva, incluindo o canal do controlador dos dados.
-4. Se desejado, fornecer WhatsApp, telefone, e-mail e endereço completos para contato e dados estruturados.
+1. Configurar `VITE_FORM_ENDPOINT` com o canal seguro que receberá a triagem.
+2. Revisar e aprovar a Política de Privacidade definitiva, incluindo o canal do controlador dos dados.
+3. Confirmar se o telefone institucional também deve funcionar como WhatsApp.
 
-Enquanto essas informações estiverem pendentes, a página permanece com `noindex` e o `robots.txt` bloqueia rastreamento.
+O domínio oficial, o telefone, o e-mail, o endereço e o Instagram foram incorporados a partir do manual de marca. Enquanto as pendências acima não forem resolvidas, a página permanece com `noindex` e o `robots.txt` bloqueia rastreamento.
 
 ## Checklist após a publicação
 
