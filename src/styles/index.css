@@ -63,3 +63,17 @@ section[id]{scroll-margin-top:82px}@media(max-width:960px){.nav{display:none;pos
 .footer-col address{max-width:240px;color:#b9b3ab;font-size:.78rem;font-style:normal;line-height:1.5}
 
 @media(max-width:640px){.brand-logo-horizontal{width:142px}.footer-logo{width:128px}}
+
+/* Progressive WhatsApp intake */
+.staged-form{max-width:760px;margin-inline:auto}
+.form-progress{margin:0 0 26px;color:#76634b;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.form-step{position:relative;padding:0 0 24px 46px;border-left:1px solid var(--line)}
+.form-step:last-of-type{padding-bottom:28px;border-left-color:transparent}
+.form-step-index{position:absolute;top:0;left:-16px;display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;background:var(--white);color:#7b5a30;font-size:.72rem;font-weight:700}
+.form-step .form-field{margin:0}
+.form-step .form-field>span{font-size:1rem}
+.form-help{margin:8px 0 0;color:var(--muted);font-size:.78rem}
+.staged-form .form-submit{margin-left:46px;cursor:pointer}
+.staged-form .form-submit:disabled{border-color:#bab4aa;background:#bab4aa;color:#46423e;cursor:not-allowed;opacity:.7}
+.staged-form .form-note{margin-left:46px}
+@media(max-width:640px){.form-step{padding-left:38px}.staged-form .form-submit,.staged-form .form-note{margin-left:38px}.staged-form .form-submit{width:calc(100% - 38px)}}

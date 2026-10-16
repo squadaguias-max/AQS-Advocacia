@@ -1,30 +1,5 @@
-import { useState } from "react";
-import { AlertTriangle, BookOpenCheck, Check, Clock3, FileCheck2, MapPin, Scale, ShieldCheck } from "lucide-react";
-
-const workStatuses = [
-  "Continuo trabalhando na empresa.",
-  "Estou afastado, mas o contrato continua ativo.",
-  "Estou cumprindo aviso-prévio.",
-  "Pedi demissão recentemente.",
-  "Fui dispensado recentemente.",
-  "O contrato terminou há mais tempo.",
-  "Minha situação é diferente das opções acima.",
-];
-
-const caseTypes = [
-  "Atrasos recorrentes ou falta de pagamento de salário.",
-  "FGTS ausente ou irregular.",
-  "Assédio, humilhação ou rigor excessivo.",
-  "Exigência incompatível com o contrato.",
-  "Exposição a risco grave no trabalho.",
-  "Redução relevante do trabalho ou da remuneração.",
-  "Descumprimento de outra obrigação importante.",
-  "Apenas insatisfação ou desejo de mudar de emprego.",
-  "Minha situação é diferente das opções acima.",
-];
-
-const durationOptions = ["Ocorreu uma única vez.", "Menos de 30 dias.", "De 1 a 3 meses.", "De 3 a 6 meses.", "Mais de 6 meses.", "Não sei precisar."];
-const recordOptions = ["Mensagens ou e-mails.", "Holerites ou comprovantes de pagamento.", "Extrato do FGTS.", "Advertências ou comunicados.", "Registros de jornada ou escalas.", "Possíveis testemunhas.", "Nenhum registro no momento.", "Outros documentos."];
+import { AlertTriangle, BookOpenCheck, Clock3, FileCheck2, MapPin, Scale, ShieldCheck } from "lucide-react";
+import { IntakeForm } from "../components/IntakeForm";
 
 const situations = [
   ["01", "Salários em atraso", "Atrasos relevantes ou recorrentes no pagamento do salário."],
@@ -50,43 +25,10 @@ const faqs = [
   ["Atraso de salário ou FGTS irregular garante a rescisão indireta?", "Não há garantia automática. Frequência, extensão, documentos e demais circunstâncias precisam ser avaliados."],
   ["Preciso ter documentos?", "Os documentos ajudam na avaliação. Mensagens, holerites, extratos, e-mails, comunicados e possíveis testemunhas podem ser relevantes."],
   ["Já pedi demissão. Ainda posso enviar o formulário?", "Sim. Informe quando e como o contrato foi encerrado. A possibilidade de qualquer medida dependerá da análise individual."],
-  ["O envio do formulário significa que o caso foi aceito?", "Não. O formulário registra o contato inicial. A aceitação depende da triagem, da análise das informações e das condições de atendimento."],
+  ["Continuar no WhatsApp significa que o caso foi aceito?", "Não. As respostas ajudam a iniciar o contato. A aceitação depende da triagem, da análise das informações e das condições de atendimento."],
 ];
 
-function CheckboxGroup({ legend, name, options }) {
-  return <fieldset className="form-field fieldset"><legend>{legend}</legend><div className="check-grid">{options.map((option) => <label className="check-option" key={option}><input type="checkbox" name={name} value={option} /><span><Check aria-hidden="true" /></span>{option}</label>)}</div></fieldset>;
-}
-
 export function HomePage() {
-  const [phone, setPhone] = useState("");
-  const [formStatus, setFormStatus] = useState("");
-
-  const maskPhone = (value) => {
-    const digits = value.replace(/\D/g, "").slice(0, 11);
-    if (digits.length <= 2) return digits;
-    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
-  };
-
-  const submitForm = async (event) => {
-    event.preventDefault();
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT;
-    if (!endpoint) {
-      setFormStatus("O canal seguro de recebimento ainda está sendo configurado. Seus dados não foram enviados.");
-      return;
-    }
-    setFormStatus("Enviando informações…");
-    try {
-      const response = await fetch(endpoint, { method: "POST", body: new FormData(event.currentTarget) });
-      if (!response.ok) throw new Error("Falha no envio");
-      event.currentTarget.reset();
-      setPhone("");
-      setFormStatus("Informações enviadas. A equipe fará a triagem e poderá entrar em contato.");
-    } catch {
-      setFormStatus("Não foi possível enviar agora. Tente novamente em alguns minutos.");
-    }
-  };
-
   return <>
     <section className="hero" id="inicio">
       <div className="hero-copy">
@@ -110,28 +52,9 @@ export function HomePage() {
       <div className="section-intro intake-intro">
         <span className="eyebrow">Triagem inicial</span>
         <h2>Conte o que está acontecendo no seu trabalho</h2>
-        <p>Preencha somente as informações necessárias para a primeira avaliação. O envio não confirma o direito à rescisão indireta nem representa aceitação do caso.</p>
+        <p>Responda às perguntas abaixo e continue a conversa no WhatsApp. As respostas ajudam a iniciar a triagem, sem confirmar o direito à rescisão indireta nem a aceitação do caso.</p>
       </div>
-      <form className="intake-form" onSubmit={submitForm}>
-        <div className="form-grid three-cols">
-          <label className="form-field"><span>Nome completo</span><input name="nome" type="text" autoComplete="name" required /></label>
-          <label className="form-field"><span>WhatsApp com DDD</span><input name="whatsapp" type="tel" inputMode="numeric" autoComplete="tel" placeholder="(48) 99999-9999" value={phone} onChange={(event) => setPhone(maskPhone(event.target.value))} pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" required /></label>
-          <label className="form-field"><span>Cidade e estado</span><input name="cidade" type="text" autoComplete="address-level2" placeholder="Ex.: São José/SC" required /></label>
-        </div>
-        <label className="form-field"><span>Qual é a sua situação atual?</span><select name="situacao_atual" defaultValue="" required><option value="" disabled>Selecione uma opção</option>{workStatuses.map((item) => <option key={item}>{item}</option>)}</select></label>
-        <CheckboxGroup legend="Qual situação mais se aproxima do seu caso?" name="tipo_caso" options={caseTypes} />
-        <div className="form-grid two-cols">
-          <label className="form-field"><span>Há quanto tempo isso acontece?</span><select name="duracao" defaultValue="" required><option value="" disabled>Selecione uma opção</option>{durationOptions.map((item) => <option key={item}>{item}</option>)}</select></label>
-          <label className="form-field"><span>Você já pediu demissão ou deixou de comparecer?</span><select name="decisao" defaultValue="" required><option value="" disabled>Selecione uma opção</option>{["Não", "Pedi demissão", "Deixei de comparecer", "Estou avaliando o que fazer"].map((item) => <option key={item}>{item}</option>)}</select></label>
-        </div>
-        <CheckboxGroup legend="Quais registros você possui?" name="registros" options={recordOptions} />
-        <label className="form-field"><span>Existe processo ou outro advogado atuando neste mesmo caso?</span><select name="processo_advogado" defaultValue="" required><option value="" disabled>Selecione uma opção</option>{["Não", "Sim, já existe advogado", "Sim, já existe processo", "Prefiro explicar no contato"].map((item) => <option key={item}>{item}</option>)}</select></label>
-        <label className="form-field"><span>Descreva resumidamente o que aconteceu</span><textarea name="relato" rows="6" maxLength="2500" placeholder="Inclua datas aproximadas, frequência e o que já foi comunicado à empresa." required /></label>
-        <label className="consent"><input type="checkbox" name="consentimento" required /><span>Autorizo a AQS Advocacia a utilizar os dados informados para realizar a triagem e entrar em contato sobre esta solicitação, conforme a <a href="#privacidade">Política de Privacidade</a>.</span></label>
-        <button className="primary-button form-submit" type="submit">Enviar informações</button>
-        {formStatus && <p className="form-status" role="status">{formStatus}</p>}
-        <p className="form-note">O envio das informações não confirma o direito à rescisão indireta, não representa aceitação do caso e não cria relação advogado-cliente. A avaliação depende dos fatos, documentos e condições de atendimento.</p>
-      </form>
+      <IntakeForm />
     </section>
 
     <section className="content-section situations-section" id="situacoes">
