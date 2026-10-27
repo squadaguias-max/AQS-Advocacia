@@ -40,7 +40,7 @@ export function IntakeForm() {
     if (!formComplete) return;
 
     const message = [
-      "Olá! Vim pela página da AQS Advocacia e gostaria de conversar sobre meu caso.",
+      "Olá! Vim pela página sobre reconhecimento de vínculo da AQS Advocacia e gostaria de conversar sobre meu caso.",
       `Nome completo: ${cleanName}`,
       `WhatsApp com DDD: ${phone}`,
       `Tempo sem registro em carteira para a mesma empresa: ${registrationPeriod}`,

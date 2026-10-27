@@ -1,33 +1,22 @@
-# SEO — AQS Advocacia | Rescisão indireta
+# SEO e direcionamento de campanhas — AQS Advocacia
 
-## Posicionamento trabalhado
+## Páginas e campanhas
 
-- Tema principal: triagem jurídica sobre possível rescisão indireta.
-- Localização confirmada: São José, Santa Catarina.
-- Público: trabalhadores que relatam possível falta grave do empregador.
-- Termos relacionados usados naturalmente: atraso de salário, FGTS irregular, assédio, descumprimento contratual, documentos trabalhistas e falta grave do empregador.
+- `/`: triagem trabalhista sobre reconhecimento de vínculo empregatício para pessoas que trabalharam sem registro ou com informações de registro diferentes da realidade. Também contempla quem já saiu da empresa.
+- `/acidente-de-trabalho`: página trabalhista dedicada a acidente de trabalho, com CTA próprio para a campanha de Google Ads.
+- Auxílio-acidente é tema previdenciário e permanece separado, com direcionamento próprio para a campanha de Meta Ads. Não misturar essa tese nem seu público com a página trabalhista de acidente de trabalho.
+- Rescisão indireta foi retirada porque não há campanha correspondente definida.
 
-## Implementado
+## Identidade e conteúdo
 
-- Título e descrição únicos em português do Brasil.
-- Um único H1 e hierarquia semântica de subtítulos.
-- Conteúdo principal de fallback presente no HTML inicial.
-- Metadados básicos de Open Graph, sem imagem social não solicitada.
-- Favicon próprio da AQS.
-- JSON-LD para `WebSite`, `LegalService`, pessoas responsáveis e `FAQPage`, somente com dados confirmados.
-- Imagens com dimensões, textos alternativos, carregamento prioritário na abertura e carregamento tardio abaixo da dobra.
-- Formulário em quatro etapas, com máscara e validação de celular com DDD. O botão abre uma conversa no WhatsApp com as respostas preenchidas na mensagem.
-- Navegação por âncoras, foco visível, link para pular ao conteúdo e menu responsivo.
+- Tipografia formal solicitada: Libre Baskerville em títulos e Source Sans 3 em textos; dourado `#B7966F`, preto `#0B0B0B`, light `#E7DED0` e white gold `#F0EFED`.
+- Manter textos informativos, sem prometer resultado ou concluir automaticamente a existência de vínculo, responsabilidade ou direito.
+- Usar o retrato aprovado da Dra. Ana fornecido pela equipe.
+- Cada página tem título, descrição, CTA e mensagem de WhatsApp coerentes com seu assunto.
 
 ## Pendências para publicação
 
 1. Revisar e aprovar a Política de Privacidade definitiva, incluindo o canal do controlador dos dados.
+2. Confirmar o destino e a mensagem de conversão do WhatsApp antes de ativar as campanhas.
 
-O domínio oficial, o telefone, o e-mail, o endereço e o Instagram foram incorporados a partir do manual de marca. Enquanto a pendência acima não for resolvida, a página permanece com `noindex` e o `robots.txt` bloqueia rastreamento.
-
-## Checklist após a publicação
-
-- Validar a propriedade no Google Search Console e enviar o sitemap.
-- Testar os dados estruturados no Rich Results Test.
-- Confirmar consistência de nome, endereço, telefone, horário e domínio no Perfil da Empresa no Google.
-- Conferir o número de destino e a mensagem preenchida no WhatsApp antes da publicação.
+O site permanece com `noindex`; `robots.txt` bloqueia rastreamento até a aprovação da política de privacidade e do canal de recebimento.

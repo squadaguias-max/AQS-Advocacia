@@ -1,109 +1,95 @@
-import { AlertTriangle, BookOpenCheck, Clock3, FileCheck2, MapPin, Scale, ShieldCheck } from "lucide-react";
+import { FileCheck2, MapPin, ShieldCheck } from "lucide-react";
 import { IntakeForm } from "../components/IntakeForm";
 
 const situations = [
-  ["01", "Salários em atraso", "Atrasos relevantes ou recorrentes no pagamento do salário."],
-  ["02", "FGTS irregular", "Ausência ou irregularidade nos depósitos do Fundo de Garantia."],
-  ["03", "Assédio ou humilhação", "Condutas ofensivas, tratamento humilhante ou rigor excessivo."],
-  ["04", "Descumprimento contratual", "Exigências incompatíveis com o contrato ou outras obrigações não cumpridas."],
-  ["05", "Risco grave", "Exposição a perigo manifesto ou condições graves de insegurança."],
-  ["06", "Outras condutas graves", "Situações que estejam afetando de modo relevante a continuidade do vínculo."],
+  ["01", "Sem registro em carteira", "O trabalho era realizado sem anotação formal do vínculo."],
+  ["02", "Registro diferente da realidade", "A função, a data de início ou outras informações podem não refletir o trabalho realizado."],
+  ["03", "Contrato encerrado", "O vínculo já terminou e você quer entender se o período trabalhado pode ser analisado."],
 ];
 
-const guidance = [
-  ["Registre os fatos", "Anote o que aconteceu, quando começou e quantas vezes a situação se repetiu."],
-  ["Preserve os documentos", "Guarde mensagens, e-mails, holerites, extratos, comunicados e outros registros relacionados."],
-  ["Evite decisões precipitadas", "Pedir demissão ou deixar de comparecer pode produzir consequências diferentes das esperadas."],
-  ["Não obtenha provas de forma irregular", "Preserve o que já existe e informe quais pessoas ou documentos podem esclarecer os fatos."],
-  ["Evite conclusões antecipadas", "Nem todo problema no trabalho permite a rescisão indireta. Cada situação exige análise individual."],
+const steps = [
+  ["Organize as informações", "Anote quando o trabalho começou e terminou, quais atividades realizava e quem acompanhava a rotina."],
+  ["Separe os registros disponíveis", "Mensagens, comprovantes de pagamento, escalas, e-mails e outros documentos podem ajudar a contextualizar o relato."],
+  ["Conte como era o trabalho", "A análise considera os fatos de cada situação. Não é necessário ter todos os documentos para iniciar uma conversa."],
 ];
 
 const faqs = [
-  ["O que é rescisão indireta?", "É uma forma de encerramento do contrato que pode ser discutida quando existe falta grave atribuída ao empregador. O cabimento depende da análise individual."],
-  ["Rescisão indireta é a mesma coisa que pedir demissão?", "Não. As duas formas de encerramento produzem efeitos diferentes. Por isso, é importante buscar orientação antes de formalizar uma decisão."],
-  ["Posso parar de trabalhar enquanto o caso é analisado?", "Não existe uma resposta geral segura. Deixar de comparecer sem orientação pode gerar consequências e alterar o cenário do caso."],
-  ["Atraso de salário ou FGTS irregular garante a rescisão indireta?", "Não há garantia automática. Frequência, extensão, documentos e demais circunstâncias precisam ser avaliados."],
-  ["Preciso ter documentos?", "Os documentos ajudam na avaliação. Mensagens, holerites, extratos, e-mails, comunicados e possíveis testemunhas podem ser relevantes."],
-  ["Já pedi demissão. Ainda posso enviar o formulário?", "Sim. Informe quando e como o contrato foi encerrado. A possibilidade de qualquer medida dependerá da análise individual."],
-  ["Continuar no WhatsApp significa que o caso foi aceito?", "Não. As respostas ajudam a iniciar o contato. A aceitação depende da triagem, da análise das informações e das condições de atendimento."],
+  ["Posso pedir uma análise se já saí da empresa?", "Sim. A triagem também recebe relatos de pessoas cujo contrato já terminou. Informe quando o vínculo se encerrou para que esse dado seja considerado."],
+  ["E se eu não tiver documentos?", "Você pode iniciar o contato com as informações que tem. A equipe poderá explicar quais outros registros podem ser úteis para a avaliação."],
+  ["Trabalhar sem carteira assinada confirma o vínculo?", "A conclusão depende da análise das condições concretas do trabalho e das informações disponíveis. A triagem não confirma automaticamente a existência de vínculo ou de valores a receber."],
+  ["O formulário já cria uma relação advogado-cliente?", "Não. As respostas iniciam o contato e a triagem, mas não representam aceitação automática do caso nem criam relação advogado-cliente."],
 ];
 
 export function HomePage() {
   return <>
     <section className="hero" id="inicio">
       <div className="hero-copy">
-        <span className="eyebrow">Direito do Trabalho · Rescisão indireta</span>
-        <h1>A empresa deixou de cumprir obrigações importantes do contrato de trabalho?</h1>
-        <p className="hero-lead">Antes de pedir demissão ou deixar de comparecer, informe o que está acontecendo para que a equipe possa verificar se a situação está dentro da área de atendimento.</p>
-        <a className="primary-button" href="#formulario">Contar o que aconteceu</a>
+        <span className="eyebrow">Direito do Trabalho <i aria-hidden="true" /> Reconhecimento de vínculo</span>
+        <h1>Você trabalhou <span className="hero-title-accent">sem registro</span> em carteira?</h1>
+        <p className="hero-lead">Mesmo que já tenha saído da empresa, você pode contar o que aconteceu. A triagem considera suas atividades, datas e registros disponíveis.</p>
+        <a className="primary-button" href="#formulario">Conversar com a equipe <span aria-hidden="true">↗</span></a>
         <div className="hero-assurances" aria-label="Informações sobre o atendimento">
-          <span><ShieldCheck /> Triagem confidencial</span>
-          <span><Clock3 /> Cerca de 3 minutos</span>
+          <span><ShieldCheck /> Análise individual</span>
+          <span><FileCheck2 /> Informações e documentos</span>
           <span><MapPin /> São José/SC e atendimento digital</span>
         </div>
       </div>
-      <figure className="hero-visual">
-        <img src="/assets/hero-advogada.jpg" width="3648" height="5472" alt="Profissional analisando documentos em uma mesa de trabalho" fetchPriority="high" />
-        <figcaption><FileCheck2 /><span><strong>Análise individual</strong>Fatos, datas e documentos ajudam a compreender o caso.</span></figcaption>
+      <figure className="hero-visual hero-visual-portrait">
+        <img src="/assets/ana-quint.jpg" width="1600" height="2400" alt="Dra. Ana Quint, advogada da AQS Advocacia" fetchPriority="high" />
+        <figcaption><FileCheck2 /><span><strong>Ana Quint</strong><small>Advogada · OAB/SC 51.785</small></span></figcaption>
       </figure>
     </section>
 
     <section className="intake-section" id="formulario">
       <div className="section-intro intake-intro">
         <span className="eyebrow">Triagem inicial</span>
-        <h2>Conte o que está acontecendo no seu trabalho</h2>
-        <p>Responda às perguntas abaixo e continue a conversa no WhatsApp. As respostas ajudam a iniciar a triagem, sem confirmar o direito à rescisão indireta nem a aceitação do caso.</p>
+        <h2>Conte sobre o período trabalhado</h2>
+        <p>Informe seus dados de contato, o tempo sem registro e se ainda trabalha para a empresa. Em seguida, você poderá revisar as respostas no WhatsApp.</p>
       </div>
       <IntakeForm />
     </section>
 
     <section className="content-section situations-section" id="situacoes">
       <div className="section-heading-row">
-        <div className="section-intro"><span className="eyebrow">Possível falta grave do empregador</span><h2>Quais situações podem ser avaliadas?</h2></div>
-        <p>A rescisão indireta pode ser discutida quando existe uma possível falta grave do empregador. A análise considera gravidade, frequência, provas disponíveis e o momento atual do contrato.</p>
+        <div className="section-intro"><span className="eyebrow">Entenda o atendimento</span><h2>Quando faz sentido iniciar uma conversa?</h2></div>
+        <p>Esta página é dedicada à triagem de situações relacionadas ao reconhecimento de vínculo empregatício. A análise depende das circunstâncias concretas de cada trabalho.</p>
       </div>
-      <div className="situations-layout">
-        <div className="situations-grid">{situations.map(([number, title, text]) => <article className="situation-card" key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
-        <div className="document-visual">
-          <figure className="evidence-card evidence-documents"><div className="evidence-image"><img src="/assets/analise-documentos.png" width="1327" height="1147" alt="Lupa sobre documentos, representando a análise das provas" loading="lazy" /></div><figcaption><strong>Análise dos registros</strong><span>Mensagens, holerites, extratos e comunicados ajudam a compreender a frequência e o contexto dos fatos.</span></figcaption></figure>
-          <figure className="evidence-card evidence-fgts"><div className="evidence-image"><img src="/assets/fgts-extrato-novo.png" width="1536" height="1024" alt="Aplicativo do FGTS aberto em um telefone celular" loading="lazy" /></div><figcaption><strong>Extrato do FGTS</strong><span>O documento pode ajudar a identificar ausências ou irregularidades nos depósitos.</span></figcaption></figure>
-        </div>
-      </div>
-      <a className="secondary-button" href="#formulario">Quero informar meu caso</a>
+      <div className="situations-grid relationship-grid">{situations.map(([number, title, text]) => <article className="situation-card" key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+      <a className="secondary-button" href="#formulario">Informar meu caso</a>
     </section>
 
     <section className="guidance-section" id="orientacoes">
-      <div className="guidance-photo"><img src="/assets/orientacao-trabalhista.jpg" width="6000" height="4000" alt="Conversa de orientação com documentos sobre uma mesa" loading="lazy" /></div>
-      <div className="guidance-content"><span className="eyebrow">Antes de agir</span><h2>O que observar antes de tomar uma decisão?</h2><div className="guidance-list">{guidance.map(([title, text], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div><a className="primary-button" href="#formulario">Preencher formulário</a></div>
+      <div className="guidance-photo"><img src="/assets/mesa-de-atendimento.jpeg" width="2000" height="1333" alt="Mesa de café e telefone em um ambiente de conversa" loading="lazy" /></div>
+      <div className="guidance-content"><span className="eyebrow">Para a triagem</span><h2>O que pode ajudar a explicar a situação?</h2><div className="guidance-list">{steps.map(([title, text], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div><a className="primary-button" href="#formulario">Preencher formulário</a></div>
     </section>
 
-    <section className="content-section direction-section" id="direcionamento">
-      <div className="section-intro"><span className="eyebrow">Filtro de atendimento</span><h2>Antes de enviar, confira o direcionamento</h2></div>
-      <div className="direction-grid">
-        <article className="direction-card positive"><div className="direction-title"><BookOpenCheck /><h3>Este atendimento pode analisar</h3></div><ul>{["Possível falta grave praticada pelo empregador.", "Problemas relevantes ou recorrentes durante o vínculo de emprego.", "Situações com datas, contexto e informações mínimas para triagem.", "Casos com documentos, comunicações ou possíveis testemunhas.", "Dúvidas antes de pedir demissão ou tomar outra decisão relevante."].map((item) => <li key={item}>{item}</li>)}</ul></article>
-        <article className="direction-card caution"><div className="direction-title"><AlertTriangle /><h3>Este atendimento não é direcionado a</h3></div><ul>{["Insatisfação genérica, sem um fato concreto ligado ao empregador.", "Dúvidas pertencentes a outra área do Direito.", "Pedido de confirmação automática de rescisão indireta.", "Solicitação de conclusão jurídica sem análise dos fatos e documentos.", "Casos com processo ou advogado constituído sem prévia verificação ética e operacional."].map((item) => <li key={item}>{item}</li>)}</ul></article>
+    <section className="listening-section">
+      <figure className="listening-visual"><img src="/assets/retrato-editorial.jpeg" width="1400" height="2100" alt="Retrato editorial de uma profissional em pose lateral" loading="lazy" /><figcaption>Escuta atenta · imagem editorial</figcaption></figure>
+      <div className="listening-copy"><span className="eyebrow">Cada trajetória tem seu contexto</span><h2>Uma conversa começa pela sua história.</h2><p>Datas, rotina de trabalho e registros disponíveis ajudam a organizar a triagem. Conte o que aconteceu no seu tempo, com as informações que tiver.</p><a className="text-link" href="#formulario">Compartilhar minha história <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section className="process-section" aria-labelledby="processo-titulo">
+      <div className="process-heading"><span className="eyebrow">Uma conversa organizada</span><h2 id="processo-titulo">Da sua história à triagem inicial</h2><p>Um primeiro contato claro ajuda a equipe a compreender o período de trabalho e a identificar quais informações ainda podem ser necessárias.</p></div>
+      <div className="process-steps">
+        <article><span>01</span><div><h3>Você conta</h3><p>Compartilhe o que fazia, quando começou e se o trabalho já terminou.</p></div></article>
+        <article><span>02</span><div><h3>A equipe compreende</h3><p>O relato é considerado junto das datas, do contexto e dos registros disponíveis.</p></div></article>
+        <article><span>03</span><div><h3>Vocês conversam</h3><p>A triagem pode indicar informações complementares e os próximos passos do atendimento.</p></div></article>
       </div>
-      <p className="direction-note">Não se enquadrar nesta triagem não representa uma conclusão definitiva sobre seus direitos. Pode significar apenas que o tema exige outro direcionamento.</p>
-    </section>
-
-    <section className="office-section" id="atendimento">
-      <figure><img src="/assets/atendimento-juridico.jpg" width="3963" height="5937" alt="Profissional revisando documentos durante um atendimento jurídico" loading="lazy" /><figcaption>Atendimento em São José/SC e possibilidade de atendimento digital.</figcaption></figure>
-      <div className="office-copy"><span className="eyebrow">AQS Advocacia</span><h2>Atendimento em Direito do Trabalho</h2><p>A AQS Advocacia atua nas áreas Trabalhista, Previdenciária e Tributária. Nesta página, a triagem é dedicada exclusivamente a situações relacionadas à possível rescisão indireta. As informações são analisadas conforme as particularidades do relato e os documentos disponíveis.</p><p>Quando necessário, a equipe poderá solicitar informações complementares antes de indicar os próximos passos.</p><div className="other-areas"><span>Reconhecimento de vínculo empregatício</span><span>Salário-maternidade e auxílio-acidente</span><span>Isenção de IR por doença grave</span><span>Tributário para clínicas e empresas de saúde</span><span>Análise de ITBI</span></div><a className="secondary-button" href="#formulario">Enviar informações para avaliação</a></div>
     </section>
 
     <section className="team-section" id="profissionais">
       <div className="team-heading">
-        <div className="section-intro"><span className="eyebrow">Responsáveis pelo atendimento</span><h2>Profissionais da AQS Advocacia</h2></div>
+        <div className="section-intro"><span className="eyebrow">AQS Advocacia</span><h2>Atendimento com atenção ao contexto</h2></div>
         <p>Atuação jurídica conduzida com análise individualizada, clareza e responsabilidade profissional.</p>
       </div>
       <div className="team-grid">
         <figure className="profile-card">
-          <div className="profile-photo"><img src="/assets/ana-quint.jpg" width="1600" height="2400" alt="Ana Quint, sócia fundadora da AQS Advocacia" loading="lazy" /></div>
-          <figcaption><span className="profile-index">01</span><div><h3>Ana Quint</h3><p>Sócia fundadora</p><strong>OAB/SC 51.785</strong></div></figcaption>
+          <div className="profile-photo"><img src="/assets/ana-quint-perfil.jpg" width="1600" height="2400" alt="Ana Quint, sócia fundadora da AQS Advocacia" loading="lazy" /></div>
+          <figcaption><span className="profile-index">01 / DIREITO DO TRABALHO</span><div><p className="profile-kicker">Sócia fundadora</p><h3>Ana Quint</h3><strong>OAB/SC 51.785</strong><p className="profile-description">Atuação atenta às particularidades de cada trajetória profissional.</p></div></figcaption>
         </figure>
         <figure className="profile-card">
-          <div className="profile-photo"><img src="/assets/roselei-machado.jpg" width="1024" height="1536" alt="Roselei Machado, profissional da AQS Advocacia" loading="lazy" /></div>
-          <figcaption><span className="profile-index">02</span><div><h3>Roselei Machado</h3><strong>OAB/SC 79.520</strong></div></figcaption>
+          <div className="profile-photo"><img src="/assets/roselei-machado.jpg" width="1024" height="1536" alt="Roselei Machado, advogada da AQS Advocacia" loading="lazy" /></div>
+          <figcaption><span className="profile-index">02</span><div><p className="profile-kicker">Advogada</p><h3>Roselei Machado</h3><strong>OAB/SC 79.520</strong></div></figcaption>
         </figure>
       </div>
     </section>
@@ -111,18 +97,25 @@ export function HomePage() {
     <section className="faq-section" id="faq">
       <div className="section-intro"><span className="eyebrow">Informação antes da decisão</span><h2>Perguntas frequentes</h2></div>
       <div className="faq-list">{faqs.map(([question, answer], index) => <details key={question}><summary><span>{String(index + 1).padStart(2, "0")}</span><strong>{question}</strong><i>+</i></summary><p>{answer}</p></details>)}</div>
-      <a className="secondary-button" href="#formulario">Contar o que aconteceu</a>
+      <a className="secondary-button" href="#formulario">Iniciar triagem</a>
+    </section>
+
+    <section className="campaign-note" aria-label="Outra página de atendimento">
+      <span className="eyebrow">Outro assunto trabalhista</span>
+      <h2>Sofreu um acidente durante o trabalho?</h2>
+      <p>Consulte a página específica de acidente de trabalho, preparada para essa campanha.</p>
+      <a className="secondary-button" href="/acidente-de-trabalho">Acessar página sobre acidente de trabalho</a>
     </section>
 
     <section className="final-cta">
-      <Scale aria-hidden="true" />
-      <div><span className="eyebrow">Próximo passo</span><h2>Antes de tomar uma decisão no trabalho, entenda o que está acontecendo</h2><p>Preencha os dados iniciais para que a equipe possa verificar se a situação está dentro da área de atendimento e quais informações ainda são necessárias.</p></div>
+      <FileCheck2 aria-hidden="true" />
+      <div><span className="eyebrow">Próximo passo</span><h2>Trabalhou sem registro? Conte o que aconteceu.</h2><p>A equipe poderá verificar se o relato está dentro do direcionamento desta triagem e quais informações podem ser necessárias.</p></div>
       <a className="primary-button" href="#formulario">Ir para o formulário</a>
     </section>
 
     <section className="legal-section" aria-label="Informações legais">
-      <details id="privacidade"><summary>Política de Privacidade</summary><p>Os dados informados são utilizados exclusivamente para realizar a triagem e possibilitar o contato sobre a solicitação. O envio deve limitar-se às informações necessárias para compreender o caso. A política definitiva deverá ser revisada e publicada com os dados do canal responsável antes da veiculação pública.</p></details>
-      <details id="termos"><summary>Termos de Uso</summary><p>O conteúdo desta página é informativo. O preenchimento do formulário não cria relação advogado-cliente, não representa aceitação automática do caso e não garante resultado. A avaliação depende das circunstâncias e dos documentos de cada situação.</p></details>
+      <details id="privacidade"><summary>Política de Privacidade</summary><p>Os dados informados são utilizados para realizar a triagem e possibilitar contato sobre a solicitação. Envie apenas as informações necessárias para iniciar a conversa. A política definitiva deve ser revisada e publicada com os dados do canal responsável antes da veiculação pública.</p></details>
+      <details id="termos"><summary>Termos de Uso</summary><p>O conteúdo desta página é informativo. O preenchimento do formulário não cria relação advogado-cliente, não representa aceitação automática do caso e não garante resultado. A avaliação depende das circunstâncias e das informações disponíveis.</p></details>
     </section>
   </>;
 }

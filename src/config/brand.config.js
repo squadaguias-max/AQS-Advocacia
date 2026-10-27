@@ -1,1 +1,1 @@
-export const defaultBrand={logoText:"A&V",colors:{primary:"#b28a4b",primaryStrong:"#8b6834",accent:"#d8bd88",surface:"#ffffff",background:"#f7f5f0",text:"#102236",muted:"#65717e"},fonts:{display:"Georgia, 'Times New Roman', serif",body:"Inter, Arial, sans-serif"},radius:"4px"};
+export const defaultBrand={logoText:"AQS",colors:{primary:"#B7966F",primaryStrong:"#80684B",accent:"#E7DED0",surface:"#F0EFED",background:"#0B0B0B",text:"#0B0B0B",muted:"#68635D"},fonts:{display:"'Libre Baskerville', Georgia, serif",body:"'Source Sans 3', Arial, sans-serif"},radius:"2px"};

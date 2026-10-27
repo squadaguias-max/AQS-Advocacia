@@ -1,9 +1,9 @@
 {
   "project": {
-    "name": "AQS Advocacia — Rescisão Indireta",
+    "name": "AQS Advocacia — Reconhecimento de Vínculo",
     "displayName": "AQS Advocacia",
     "conversionAction": "Formulário de triagem",
-    "slug": "aqs-advocacia-rescisao-indireta",
+    "slug": "aqs-advocacia-reconhecimento-de-vinculo",
     "sourceTemplate": "Template 1",
     "sourceVersion": "1.2.0"
   },
@@ -11,13 +11,13 @@
     "name": "Ana Quint e Roselei Machado",
     "officeName": "AQS Advocacia",
     "oab": "OAB/SC 51.785 · OAB/SC 79.520",
-    "area": "Direito do Trabalho — Rescisão indireta",
+    "area": "Direito do Trabalho — Reconhecimento de vínculo empregatício",
     "city": "São José/SC",
-    "biography": "Atuação nas áreas Trabalhista, Previdenciária e Tributária, com triagem dedicada à possível rescisão indireta."
+    "biography": "Atuação nas áreas Trabalhista, Previdenciária e Tributária, com triagem dedicada ao reconhecimento de vínculo empregatício."
   },
   "contact": {
     "whatsapp": "5548988250054",
-    "whatsappMessage": "Olá! Vim pela página sobre rescisão indireta da AQS Advocacia.",
+    "whatsappMessage": "Olá! Vim pela página sobre reconhecimento de vínculo da AQS Advocacia.",
     "phone": "(48) 98825-0054",
     "email": "contato@aqsadvocacia.com",
     "instagram": "@aqsadvocacia",
@@ -32,20 +32,20 @@
     "mapsQuery": "São José, Santa Catarina"
   },
   "theme": {
-    "primary": "#b99355",
-    "secondary": "#0d2529",
+    "primary": "#B7966F",
+    "secondary": "#0B0B0B",
     "style": "Institucional editorial"
   },
   "hero": {
-    "title": "A empresa deixou de cumprir obrigações importantes do contrato de trabalho?",
-    "description": "Antes de pedir demissão ou deixar de comparecer, informe o que está acontecendo para uma triagem inicial.",
-    "cta": "Contar o que aconteceu"
+    "title": "Você trabalhou sem registro em carteira?",
+    "description": "Conte como era o trabalho e por quanto tempo aconteceu. A triagem também atende quem já saiu da empresa.",
+    "cta": "Iniciar triagem"
   },
-  "audience": "Trabalhadores que relatam possível falta grave do empregador",
+  "audience": "Trabalhadores com dúvidas sobre período de trabalho sem registro ou registro diferente da realidade",
   "services": [
     {
-      "title": "Triagem sobre rescisão indireta",
-      "description": "Análise inicial de fatos, datas, documentos e situação atual do contrato de trabalho."
+      "title": "Reconhecimento de vínculo empregatício",
+      "description": "Triagem inicial sobre período trabalhado sem registro ou com informações diferentes da realidade."
     }
   ],
   "assets": "Imagens fornecidas pela equipe para esta landing page",
